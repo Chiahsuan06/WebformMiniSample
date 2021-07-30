@@ -74,6 +74,20 @@ namespace AccountingNote.DBSource
             }
         }
 
+        public static void CreateModifyData(string connStr, string dbCommand)
+        {
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                using (SqlCommand comm = new SqlCommand(dbCommand, conn))
+                {
+
+                    conn.Open();
+                    comm.ExecuteNonQuery();
+
+                }
+            }
+        }
+
 
     }
 }

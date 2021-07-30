@@ -95,29 +95,25 @@ namespace AccountingNote.DBSource
                         )
                 ";
 
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@userID", userID));
+            parameters.Add(new SqlParameter("@caption", caption));
+            parameters.Add(new SqlParameter("@amount", amount));
+            parameters.Add(new SqlParameter("@actType", actType));
+            parameters.Add(new SqlParameter("@createDate", DateTime.Now));
+            parameters.Add(new SqlParameter("@body", body));
 
-            using (SqlConnection conn = new SqlConnection(connStr))
+            try
             {
-                using (SqlCommand comm = new SqlCommand(dbCommand, conn))
-                {
-                    comm.Parameters.AddWithValue("@userID", userID);
-                    comm.Parameters.AddWithValue("@caption", caption);
-                    comm.Parameters.AddWithValue("@amount", amount);
-                    comm.Parameters.AddWithValue("@actType", actType);
-                    comm.Parameters.AddWithValue("@createDate", DateTime.Now);
-                    comm.Parameters.AddWithValue("@body", body);
-                    try
-                    {
-                        conn.Open();
-                        comm.ExecuteNonQuery();
-                    }
-                    catch (Exception ex)
-                    {
-                        Logger.WriteLog(ex);
-                    }
-                }
+                DBHelper.CreateModifyData(connStr, dbCommand);
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
             }
         }
+
+
         public static bool UpdateAccounting(int ID, string userID, string caption, int amount, int actType, string body)
         {
             if (amount < 0 || amount > 1000000)
