@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingNote.DBSource", "AccountingNote.DBSource\AccountingNote.DBSource.csproj", "{0A85BA5A-635B-4A0A-82D7-E5FEA4E5C567}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingNote", "AccountingNote\AccountingNote.csproj", "{D2E65710-4D10-4CCA-A349-02A5C27A1A2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A85BA5A-635B-4A0A-82D7-E5FEA4E5C567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A85BA5A-635B-4A0A-82D7-E5FEA4E5C567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A85BA5A-635B-4A0A-82D7-E5FEA4E5C567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A85BA5A-635B-4A0A-82D7-E5FEA4E5C567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2E65710-4D10-4CCA-A349-02A5C27A1A2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2E65710-4D10-4CCA-A349-02A5C27A1A2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2E65710-4D10-4CCA-A349-02A5C27A1A2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2E65710-4D10-4CCA-A349-02A5C27A1A2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1012583-CC33-4232-9A54-0CCC3EBA7059}
+	EndGlobalSection
+EndGlobal
