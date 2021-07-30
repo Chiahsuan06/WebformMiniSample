@@ -76,36 +76,36 @@ namespace AccountingNote.DBSource
             string connStr = DBHelper.GetConnectionString();
             string dbCommand =
                 $@" INSERT INTO [dbo].[Accounting]
-                       (
+                (
                         UserID
                        ,Caption
                        ,Amount
                        ,ActType
                        ,CreateDate
                        ,Body
-                        )
-                     VALUES
-                       (
+                 )
+                    VALUES
+                (
                             @userID
                            ,@caption
                            ,@amount
                            ,@actType
                            ,@createDate
                            ,@body
-                        )
+                )
                 ";
 
-            List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@userID", userID));
-            parameters.Add(new SqlParameter("@caption", caption));
-            parameters.Add(new SqlParameter("@amount", amount));
-            parameters.Add(new SqlParameter("@actType", actType));
-            parameters.Add(new SqlParameter("@createDate", DateTime.Now));
-            parameters.Add(new SqlParameter("@body", body));
+            List<SqlParameter> createList = new List<SqlParameter>();
+            createList.Add(new SqlParameter("@userID", userID));
+            createList.Add(new SqlParameter("@caption", caption));
+            createList.Add(new SqlParameter("@amount", amount));
+            createList.Add(new SqlParameter("@actType", actType));
+            createList.Add(new SqlParameter("@createDate", DateTime.Now));
+            createList.Add(new SqlParameter("@body", body));
 
             try
             {
-                DBHelper.CreateModifyData(connStr, dbCommand);
+                 DBHelper.CreateData(connStr, dbCommand, createList);
             }
             catch (Exception ex)
             {

@@ -74,13 +74,13 @@ namespace AccountingNote.DBSource
             }
         }
 
-        public static void CreateModifyData(string connStr, string dbCommand)
+        public static void CreateData(string connStr, string dbCommand, List<SqlParameter> createList)
         {
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 using (SqlCommand comm = new SqlCommand(dbCommand, conn))
                 {
-
+                    comm.Parameters.AddRange(createList.ToArray());
                     conn.Open();
                     comm.ExecuteNonQuery();
 
