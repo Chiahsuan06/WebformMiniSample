@@ -139,35 +139,31 @@ namespace AccountingNote.DBSource
                         ID = @id
                 ";
 
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@userID", userID));
+            parameters.Add(new SqlParameter("@caption", caption)); 
+            parameters.Add(new SqlParameter("@amount", amount)); 
+            parameters.Add(new SqlParameter("@actType", actType)); 
+            parameters.Add(new SqlParameter("@createDate", DateTime.Now)); 
+            parameters.Add(new SqlParameter("@body", body)); 
+            parameters.Add(new SqlParameter("@id", ID));
 
-            using (SqlConnection conn = new SqlConnection(connStr))
+
+            try
             {
-                using (SqlCommand comm = new SqlCommand(dbCommand, conn))
-                {
-                    comm.Parameters.AddWithValue("@userID", userID);
-                    comm.Parameters.AddWithValue("@caption", caption);
-                    comm.Parameters.AddWithValue("@amount", amount);
-                    comm.Parameters.AddWithValue("@actType", actType);
-                    comm.Parameters.AddWithValue("@createDate", DateTime.Now);
-                    comm.Parameters.AddWithValue("@body", body);
-                    comm.Parameters.AddWithValue("@id", ID);
-                    try
-                    {
-                        conn.Open();
-                        int effectRows = comm.ExecuteNonQuery();
+                int effectRows = DBHelper.ModifyData(connStr, dbCommand, parameters);
 
-                        if (effectRows == 1)
-                            return true;
-                        else
-                            return false;
-                    }
-                    catch (Exception ex)
-                    {
-                        Logger.WriteLog(ex);
-                        return false;
-                    }
-                }
+                if (effectRows == 1)
+                    return true;
+                else
+                    return false;
             }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+                return false;
+            }
+
         }
 
 
@@ -192,7 +188,5 @@ namespace AccountingNote.DBSource
             }
             
         }
-
-
     }
 }

@@ -17,7 +17,6 @@ namespace AccountingNote.DBSource
             return val;
         }
 
-
         public static DataTable ReadDataTable(string connStr, string dbCommand, List<SqlParameter> list)
         {
             using (SqlConnection conn = new SqlConnection(connStr))
@@ -61,7 +60,7 @@ namespace AccountingNote.DBSource
 
         }
 
-        public static void ModifyData(string connStr, string dbCommand, List<SqlParameter> paramList)
+        public static int ModifyData(string connStr, string dbCommand, List<SqlParameter> paramList)
         {
             using (SqlConnection conn = new SqlConnection(connStr))
             {
@@ -69,9 +68,12 @@ namespace AccountingNote.DBSource
                 {
                     comm.Parameters.AddRange(paramList.ToArray());
                     conn.Open();
-                    comm.ExecuteNonQuery();
+                    int effectRowsCount = comm.ExecuteNonQuery();
+                    return effectRowsCount;
                 }
             }
         }
+
+
     }
 }
