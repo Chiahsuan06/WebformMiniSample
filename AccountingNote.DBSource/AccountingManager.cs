@@ -179,23 +179,20 @@ namespace AccountingNote.DBSource
                     WHERE ID =@id
                 ";
 
-            using (SqlConnection conn = new SqlConnection(connStr))
+            List<SqlParameter> paramList = new List<SqlParameter>();
+            paramList.Add(new SqlParameter("@id", ID));
+
+            try
             {
-                using (SqlCommand comm = new SqlCommand(dbCommand, conn))
-                {
-                    comm.Parameters.AddWithValue("@id", ID);
-                    try
-                    {
-                        conn.Open();
-                        comm.ExecuteNonQuery();
-                    }
-                    catch (Exception ex)
-                    {
-                        Logger.WriteLog(ex);
-                    }
-                }
+               DBHelper.ModifyData(connStr, dbCommand, paramList);
             }
+            catch (Exception ex)
+            {
+                Logger.WriteLog(ex);
+            }
+            
         }
+
 
     }
 }
