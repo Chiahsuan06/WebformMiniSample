@@ -9,3 +9,4 @@ D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.DBS
 D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.DBSource\obj\Debug\AccountingNote.DBSource.csproj.CoreCompileInputs.cache
 D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.DBSource\obj\Debug\AccountingNote.DBSource.dll
 D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.DBSource\obj\Debug\AccountingNote.DBSource.pdb
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.DBSource\obj\Debug\AccountingNote.DBSource.csproj.AssemblyReference.cache

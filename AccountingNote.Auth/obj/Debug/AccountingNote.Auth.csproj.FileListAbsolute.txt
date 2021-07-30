@@ -1,0 +1,6 @@
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.Auth\bin\Debug\AccountingNote.Auth.dll
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.Auth\bin\Debug\AccountingNote.Auth.pdb
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.Auth\obj\Debug\AccountingNote.Auth.csproj.AssemblyReference.cache
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.Auth\obj\Debug\AccountingNote.Auth.csproj.CoreCompileInputs.cache
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.Auth\obj\Debug\AccountingNote.Auth.dll
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.Auth\obj\Debug\AccountingNote.Auth.pdb

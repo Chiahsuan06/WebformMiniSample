@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingNote.DBSource", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingNote", "AccountingNote\AccountingNote.csproj", "{D2E65710-4D10-4CCA-A349-02A5C27A1A2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingNote.Auth", "AccountingNote.Auth\AccountingNote.Auth.csproj", "{710A5A5C-644B-4B6C-9D0C-67FE7BA92189}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D2E65710-4D10-4CCA-A349-02A5C27A1A2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2E65710-4D10-4CCA-A349-02A5C27A1A2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2E65710-4D10-4CCA-A349-02A5C27A1A2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{710A5A5C-644B-4B6C-9D0C-67FE7BA92189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{710A5A5C-644B-4B6C-9D0C-67FE7BA92189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{710A5A5C-644B-4B6C-9D0C-67FE7BA92189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{710A5A5C-644B-4B6C-9D0C-67FE7BA92189}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -31,6 +31,7 @@ namespace AccountingNote.DBSource
 
             try
             {
+
                 return DBHelper.ReadDataRow(connectionString, dbCommandString, list);
             }
             catch (Exception ex)

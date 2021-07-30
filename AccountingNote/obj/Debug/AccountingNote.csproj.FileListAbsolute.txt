@@ -120,3 +120,5 @@ D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\bin
 D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\obj\Debug\AccountingNote.csproj.AssemblyReference.cache
 D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\obj\Debug\AccountingNote.csproj.CoreCompileInputs.cache
 D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\obj\Debug\AccountingNote.csproj.CopyComplete
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\bin\AccountingNote.Auth.dll
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\bin\AccountingNote.Auth.pdb
