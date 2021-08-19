@@ -1,5 +1,6 @@
 ﻿using AccountingNote.Auth;
 using AccountingNote.DBSource;
+using AccountingNote.ORM2.DBModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -32,19 +33,93 @@ namespace AccountingNote.SystemAdmin
             }
 
             //read accounting data
-            var dt = AccountingManager.GetAccountingList(currentUser.ID);
+            //var dt = AccountingManager.GetAccountingList(currentUser.ID);
+            var list = AccountingManager.GetAccountingList(currentUser.ID);
 
-            if (dt.Rows.Count > 0)   // check is empty data
+            //if (dt.Rows.Count > 0)   // check is empty data
+            //{
+            //    var dtPaged = this.GetPagedDataTable(dt);
+
+            //    this.ucPager2.TotalSize = dt.Rows.Count;
+            //    this.ucPager2.Bind();
+
+            //    this.gvAccountingList.DataSource = dtPaged;
+            //    this.gvAccountingList.DataBind();
+            //}
+            //else 
+            //{
+            //    this.gvAccountingList.Visible = false;
+            //    this.plcNoData.Visible = true;
+            //}
+
+            if (list.Count > 0)   // check is empty data
             {
-                this.gvAccountingList.DataSource = dt;
+                var pagedList = this.GetPagedDataTable(list);
+
+                this.gvAccountingList.DataSource = pagedList;
                 this.gvAccountingList.DataBind();
+
+                this.ucPager2.TotalSize = list.Count;
+                this.ucPager2.Bind();
             }
-            else 
+            else
             {
                 this.gvAccountingList.Visible = false;
                 this.plcNoData.Visible = true;
             }
-           
+        }
+
+        private int GetCurrentPage()
+        {
+            string pageText = Request.QueryString["Page"];
+            
+            if (string.IsNullOrWhiteSpace(pageText))
+                return 1;
+
+            int intPage;
+            if (!int.TryParse(pageText, out intPage))
+                return 1;
+
+            if(intPage <= 0)
+                return 1;
+
+            return intPage;
+        }
+
+        private List<Accounting> GetPagedDataTable(List<Accounting> list)
+        {
+            int startIndex = (this.GetCurrentPage() - 1) * 10;
+            int endIndex = (this.GetCurrentPage()) * 10;
+            return list.Skip(startIndex).Take(10).ToList();
+        }
+
+        private DataTable GetPagedDataTable(DataTable dt)
+        {
+            DataTable dtPaged = dt.Clone();
+            int pageSize = this.ucPager2.PageSize;
+
+            //foreach (DataRow dr in dt.Rows)
+            //for(var i = 0; i <dt.Rows.Count; i++)
+
+            int startIndex = (this.GetCurrentPage() - 1) * pageSize;
+            int endIndex = (this.GetCurrentPage()) * pageSize;
+            if (endIndex > dt.Rows.Count)
+                endIndex = dt.Rows.Count;
+
+            for (var i = startIndex; i < endIndex; i++)
+            {
+                DataRow dr = dt.Rows[i];
+                var drNew = dtPaged.NewRow();
+                
+                foreach (DataColumn dc in dt.Columns)
+                {
+                    drNew[dc.ColumnName] = dr[dc];
+                }
+
+                dtPaged.Rows.Add(drNew);
+            }
+
+            return dtPaged;
         }
 
         protected void btnCreate_Click(object sender, EventArgs e)
@@ -63,22 +138,22 @@ namespace AccountingNote.SystemAdmin
 
                 Label lbl = row.FindControl("lblActType") as Label;
 
-                var dr = row.DataItem as DataRowView;
-                int actType = dr.Row.Field<int>("ActType");
+                //var dr = row.DataItem as DataRowView;
+                //int actType = dr.Row.Field<int>("ActType");
+                var rowData = row.DataItem as Accounting;
+                int actType = rowData.ActType;
 
                 if (actType == 0)
                     lbl.Text = "支出";
                 else
                     lbl.Text = "收入";
 
-                if (dr.Row.Field<int>("Amount") > 1500)
+                if (rowData.Amount > 1500)
                 {
                     lbl.ForeColor = Color.Red;
                 }
 
             }
-    }
-        
-
+        }
     }
 }

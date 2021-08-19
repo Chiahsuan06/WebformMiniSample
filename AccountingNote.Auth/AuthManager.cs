@@ -29,9 +29,9 @@ namespace AccountingNote.Auth
             if (account == null)
                 return null;
 
-            DataRow dr = UserInfoManager.GetUserInfoByAccount(account);
+            var userInfo = UserInfoManager.GetUserInfoByAccount_ORM(account);
 
-            if (dr == null)
+            if (userInfo == null)
             {
                 HttpContext.Current.Session["UserLoginInfo"] = null;
                 return null;
@@ -39,10 +39,12 @@ namespace AccountingNote.Auth
             
 
             UserInfoModel model = new UserInfoModel();
-            model.ID = dr["ID"].ToString();
-            model.Account = dr["Account"].ToString();
-            model.Name = dr["Name"].ToString();
-            model.Email = dr["Email"].ToString();
+            model.ID = userInfo.ID;
+            model.Account = userInfo.Account;
+            model.Name = userInfo.Name;
+            model.Email = userInfo.Email;
+            model.Phone = userInfo.Phone;
+            //model.UserLevel = dr["UserLevel"].ToString();
 
             return model;
         }
@@ -62,19 +64,20 @@ namespace AccountingNote.Auth
                 return false;
             }
 
-            var dr = UserInfoManager.GetUserInfoByAccount(account);
+            var userInfo = UserInfoManager.GetUserInfoByAccount_ORM(account);
 
             //check null
-            if (dr == null)
+            if (userInfo == null)
             {
                 errorMsg = "Account doesn't exists.";
                 return false;
             }
 
             //check account / PWD
-            if (string.Compare(dr["Account"].ToString(), account, true) == 0 && string.Compare(dr["PWD"].ToString(), pwd, false) == 0)
+            if (string.Compare(userInfo.Account.ToString(), account, true) == 0 && 
+                string.Compare(userInfo.PWD.ToString(), pwd, false) == 0)
             {
-                HttpContext.Current.Session["UserLoginInfo"] = dr["Account"].ToString();
+                HttpContext.Current.Session["UserLoginInfo"] = userInfo.Account;
 
                 errorMsg = string.Empty;
                 return true;

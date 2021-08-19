@@ -122,3 +122,13 @@ D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\obj
 D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\obj\Debug\AccountingNote.csproj.CopyComplete
 D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\bin\AccountingNote.Auth.dll
 D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\bin\AccountingNote.Auth.pdb
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\bin\Newtonsoft.Json.dll
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\bin\Newtonsoft.Json.xml
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\bin\AccountingNote.ORM2.dll
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\bin\EntityFramework.dll
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\bin\AccountingNote.DBSource.dll.config
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\bin\AccountingNote.ORM2.pdb
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\bin\AccountingNote.ORM2.dll.config
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\bin\EntityFramework.xml
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\bin\EntityFramework.SqlServer.dll
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote\bin\EntityFramework.SqlServer.xml

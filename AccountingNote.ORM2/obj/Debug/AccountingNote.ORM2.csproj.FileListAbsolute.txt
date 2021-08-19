@@ -1,0 +1,13 @@
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.ORM2\bin\Debug\AccountingNote.ORM2.dll.config
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.ORM2\bin\Debug\AccountingNote.ORM2.dll
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.ORM2\bin\Debug\AccountingNote.ORM2.pdb
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.ORM2\bin\Debug\EntityFramework.dll
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.ORM2\bin\Debug\EntityFramework.SqlServer.dll
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.ORM2\bin\Debug\EntityFramework.xml
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.ORM2\bin\Debug\EntityFramework.SqlServer.xml
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.ORM2\bin\Debug\zh-Hant\EntityFramework.resources.dll
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.ORM2\obj\Debug\AccountingNote.ORM2.csproj.AssemblyReference.cache
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.ORM2\obj\Debug\AccountingNote.ORM2.csproj.CoreCompileInputs.cache
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.ORM2\obj\Debug\AccountingNote.ORM2.csproj.CopyComplete
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.ORM2\obj\Debug\AccountingNote.ORM2.dll
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.ORM2\obj\Debug\AccountingNote.ORM2.pdb

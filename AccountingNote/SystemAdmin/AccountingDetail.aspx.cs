@@ -1,5 +1,7 @@
 ﻿using AccountingNote.Auth;
 using AccountingNote.DBSource;
+using AccountingNote.Extension;
+using AccountingNote.ORM2.DBModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +25,7 @@ namespace AccountingNote.SystemAdmin
             string account = this.Session["UserLoginInfo"] as string;
             var currentUser = AuthManager.GetCurrentUser();
 
-            if (currentUser == null)                                //如果帳號不存在，導致登入頁
+            if (currentUser == null)                                //如果帳號不存在，導至登入頁
             {
                 this.Session["UserLoginInfo"] = null;
                 Response.Redirect("/Login.aspx");
@@ -45,9 +47,9 @@ namespace AccountingNote.SystemAdmin
                     int id;
                     if (int.TryParse(idText, out id))
                     {
-                        var drAccounting = AccountingManager.GetAccounting(id, currentUser.ID);
+                        var accounting = AccountingManager.GetAccounting(id, currentUser.ID);
 
-                        if (drAccounting == null)
+                        if (accounting == null)
                         {
                             this.ltMsg.Text = "Data doesn't exist.";
                             this.btnSave.Visible = false;
@@ -55,10 +57,10 @@ namespace AccountingNote.SystemAdmin
                         }
                         else
                         {
-                            this.ddlActType.SelectedValue = drAccounting["ActType"].ToString();
-                            this.txtAmount.Text = drAccounting["Amount"].ToString();
-                            this.txtCaption.Text = drAccounting["Caption"].ToString();
-                            this.txtDesc.Text = drAccounting["Body"].ToString();
+                            this.ddlActType.SelectedValue = accounting.ActType.ToString();
+                            this.txtAmount.Text = accounting.Amount.ToString();
+                            this.txtCaption.Text = accounting.Caption.ToString();
+                            this.txtDesc.Text = accounting.Body.ToString();
                         }
                     }
                     else 
@@ -90,26 +92,42 @@ namespace AccountingNote.SystemAdmin
                 return;
             }
 
-            string userID = currentUser.ID;
             string actTypeText = this.ddlActType.SelectedValue;
             string amountText = this.txtAmount.Text;
-            string caption = this.txtCaption.Text;
-            string body = this.txtDesc.Text;
-
             int amount = Convert.ToInt32(amountText);
             int actType = Convert.ToInt32(actTypeText);
 
             string idText = this.Request.QueryString["ID"];
+            Accounting accounting = new Accounting()
+            {
+                UserID = currentUser.ID,
+                ActType = actType,
+                Amount = amount,
+                Caption = this.txtCaption.Text,
+                Body = this.txtDesc.Text,
+            };
             if (string.IsNullOrWhiteSpace(idText))
             {
-                AccountingManager.CreateAccounting(userID, caption, amount, actType, body);
+                //AccountingManager.CreateAccounting(userID, caption, amount, actType, body);
+                AccountingManager.CreateAccounting(accounting);
             }
             else 
             {
                 int id;
                 if (int.TryParse(idText, out id))
                 {
-                    AccountingManager.UpdateAccounting(id, userID, caption, amount, actType, body);
+                    //Accounting accounting = new Accounting()
+                    //{
+                    //    ID = id,
+                    //    UserID = userID.ToGuid(),
+                    //    ActType = actType,
+                    //    Amount = amount,
+                    //    Caption = caption,
+                    //    Body = body,
+                    //};
+
+                    accounting.ID = id;
+                    AccountingManager.UpdateAccounting(accounting);
                 }
             }
             Response.Redirect("/SystemAdmin/AccountingList.aspx");

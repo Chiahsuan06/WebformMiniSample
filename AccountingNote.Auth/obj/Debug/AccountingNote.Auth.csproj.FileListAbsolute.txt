@@ -7,3 +7,9 @@ D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.Aut
 D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.Auth\bin\Debug\AccountingNote.DBSource.dll
 D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.Auth\bin\Debug\AccountingNote.DBSource.pdb
 D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.Auth\obj\Debug\AccountingNote.Auth.csproj.CopyComplete
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.Auth\bin\Debug\AccountingNote.ORM2.dll
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.Auth\bin\Debug\EntityFramework.dll
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.Auth\bin\Debug\AccountingNote.DBSource.dll.config
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.Auth\bin\Debug\AccountingNote.ORM2.pdb
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.Auth\bin\Debug\AccountingNote.ORM2.dll.config
+D:\課程練習用\Github\WebformMiniSample\WebformMiniSample\AccountingNote.Auth\bin\Debug\EntityFramework.xml

@@ -33,6 +33,9 @@ namespace AccountingNote.SystemAdmin
                 this.ltAccount.Text = currentUser.Account;
                 this.ltName.Text = currentUser.Name;
                 this.ltEmail.Text = currentUser.Email;
+                
+
+              
             }
             
         }

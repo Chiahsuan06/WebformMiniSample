@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AccountingNote.ORM2.DBModels;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -11,38 +12,26 @@ namespace AccountingNote.DBSource
 {
     public class UserInfoManager
     {
-        //public static string GetConnectionString()
-        //{
-        //    string val = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-        //    return val;
-        //}
-        public static DataRow GetUserInfoByAccount(string account)
+        public static UserInfo GetUserInfoByAccount_ORM(string account)
         {
-            string connectionString = DBHelper.GetConnectionString();
-
-            string dbCommandString =
-                 @"SELECT [ID], [Account], [PWD], [Name], [Email]
-                   FROM UserInfo
-                   WHERE [Account] = @account
-                 ";
-
-            List<SqlParameter> list = new List<SqlParameter>();
-            list.Add(new SqlParameter("@account", account));
-
             try
             {
+                using (ContextModel context = new ContextModel())
+                {
+                    var query =
+                        (from item in context.UserInfoes
+                         where item.Account == account
+                         select item);
 
-                return DBHelper.ReadDataRow(connectionString, dbCommandString, list);
+                    var obj = query.FirstOrDefault();
+                    return obj;
+                }
             }
             catch (Exception ex)
             {
                 Logger.WriteLog(ex);
                 return null;
             }
-
-            
-        } 
-     
-
+        }
     }
 }

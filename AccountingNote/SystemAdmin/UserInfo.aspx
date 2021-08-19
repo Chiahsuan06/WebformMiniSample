@@ -35,6 +35,10 @@
                         <th>Email</th>
                         <td><asp:Literal ID="ltEmail" runat="server"></asp:Literal></td>
                     </tr>
+                        <tr>
+                        <th>UserLevel</th>
+                        <td><asp:Literal ID="ltUserLevel" runat="server"></asp:Literal></td>
+                    </tr>
                 </table>
                     <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
                 </td>

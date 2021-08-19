@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="TryMain.master.cs" Inherits="TryWebApplication.TryMain" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title><%= this.MyTitle %></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <h1>
+                        <a href="/">
+                    <img src="AW433531_00.gif" /><asp:Literal ID="ltlCaption" runat="server">示範系統</asp:Literal>    
+                    </a></h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="WebForm1.aspx">page 1</a>
+                    <a href="WebForm2.aspx">page 2</a>
+                    <a href="WebForm3.aspx">page 3</a>
+                </td>
+                <td>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h2>頁尾</h2>
+                    <asp:Literal ID="ltlMsg" runat="server"></asp:Literal>
+                    <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+                </td>
+            </tr>
+            
+        </table>
+    </form>
+</body>
+</html>
